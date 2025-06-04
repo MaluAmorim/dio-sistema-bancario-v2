@@ -16,14 +16,16 @@ print("Bem vindo ao LumosBank! \n")
 
 opcao = 0
 
+# Função responsavel por tratar toda a criação dos usuários
 def criar_usuario(nome, data_nascimento, cpf, endereco):
-
+    # Dicionário responsavel por armazenar as informações de endereço
     endereco = {logradouro: logradouro,
                 numero_propriedade: numero_propriedade,
                 bairro: bairro,
                 cidade: cidade,
                 sigla_estado: sigla_estado}
     
+    # Dicionário responsavel pelas informações do usuário
     usuario = {nome: nome,
                data_nascimento: data_nascimento,
                cpf: cpf,
@@ -42,11 +44,12 @@ def criar_usuario(nome, data_nascimento, cpf, endereco):
             print(f"Erro: CPF {cpf_formatado} ja cadastrado!")
             return None
 
+# Função responsavel por tratar toda a criação das contas dos usuários
 def criar_conta(agencia, numero_conta, usuario):
     agencia = 0001
     numero_conta = 1
     
-
+# Função responsavel por tratar os saques realizados na conta
 def saque(*, saldo, valor_saque, limite_valor, numero_saque, limite_saque):
     limite_valor = 500.0
     limite_saque = 3
@@ -81,6 +84,7 @@ def saque(*, saldo, valor_saque, limite_valor, numero_saque, limite_saque):
         except ValueError: # Trata erro ao ser inserido um valor string
                 print("Entrada inválida. Por favor, digite um número válido. Não utilize vigulas mas sim ponto. Ex.: 275.49\n")
 
+# Função responsavel por tratar os depósitos realizados na conta
 def deposito(saldo, valor_deposito, /):
 
     try:
@@ -98,6 +102,7 @@ def deposito(saldo, valor_deposito, /):
     except ValueError: # Trata erro ao ser inserido um valor string
         print("Entrada inválida. Por favor, digite um número válido. Não utilize vigulas mas sim ponto. Ex.: 275.49\n")
 
+# Função responsavel por exibir o extrato da conta do usuário
 def extrato(saldo, /, *, extrato):
     print("\n--- Extrato ---")
     if not extrato:
@@ -108,8 +113,8 @@ def extrato(saldo, /, *, extrato):
     print(f"Saldo atual: R${saldo:.2f}")
     print("----------------\n")
 
+# Função responsavel por guiar o usuário pelas funções do sistema
 def menu():
-
     # Loop que mantem o sistema funcionando até que seja escolhida a opção 4 para sair
     while opcao != 0:
         print("""
@@ -149,7 +154,7 @@ def menu():
                 print("Agradecemos a preferência, até breve!")
                 break
             
-            else:
+            else: # Trata erro ao ser inserido algum numero que não seja os especificados
                 print("Opção inválida. Tente novamente.\n")
 
         except ValueError: # Trata erro ao ser inserido um valor string
