@@ -127,11 +127,11 @@ def menu():
             """)
         try:
             opcao = int(input("Digite a opção desejada: ")).strip() # Recebe a opção escolhida pelo usuário
-            # Ao ser escolhida a opção 1 é retoranada a função deposito
+            # Ao ser escolhida a opção 1 é retorna a função deposito
             if opcao == 1:
                 return deposito
                 
-            # Ao ser escolhida a opção 2 é retoranada a função saque
+            # Ao ser escolhida a opção 2 é retorna a função saque
             elif opcao == 2:
 
                 valor = float(input("Informe o valor do saque: "))
@@ -145,12 +145,12 @@ def menu():
                 limite_saque=LIMITE_SAQUE
             )
                 
-            # Ao ser escolhida a opção 3 é retoranada a função extrato
+            # Ao ser escolhida a opção 3 é retornada a função extrato
             elif opcao == 3:
 
                 return extrato
             
-            # Ao ser escolhida a opção 4 é retoranada a função criar usuário
+            # Ao ser escolhida a opção 4 é retornada a função criar usuário
             elif opcao == 4:
                 
                 endereco = {logradouro: logradouro,
@@ -168,7 +168,7 @@ def menu():
                 data_nascimento=data_nascimento,
                 cpf=cpf)
             
-            # Ao ser escolhida a opção 5 é retoranada a função criar conta
+            # Ao ser escolhida a opção 5 é retornada a função criar conta
             elif opcao == 5:
                 return criar_conta
             
